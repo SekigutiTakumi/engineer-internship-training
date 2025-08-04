@@ -43,7 +43,11 @@
             </form>
             <hr>
             <!-- 投稿一覧 -->
-            <div class="posts">                
+            <div class="posts">   
+                <select name="order"onclick="narabikae(this)">
+                    <option value="new">新しい順</option>
+                    <option value="old">古い順</option>
+                </select>
                 <?php if ($this->get('posts')) : ?>
                     <?php foreach ($this->get('posts') as $post) : ?>
                         <!-- 投稿カード -->

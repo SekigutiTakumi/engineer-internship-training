@@ -53,12 +53,17 @@ class Post
      *
      * @return array{name: string, message: string} 取得したデータ
      */
-    public function fetch(): array
-    {
+    public function fetch(string $ordertipe): array
+    {   $order = 'DESC';
+        if($ordertipe == 'old'){
+            $order = 'ASC';
+        }
         $pdo = $this->dbConnect();
+
         $sql = "SELECT `id`, `name`, `message` ,`updated_at`
             FROM posts 
-            ORDER BY `id` DESC";
+            ORDER BY `updated_at` $order";
+            var_dump($sql);
         $statement = $pdo->query($sql);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }

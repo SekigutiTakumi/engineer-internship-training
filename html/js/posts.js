@@ -52,3 +52,12 @@ const deletePost = (self) => {
         }
     }
 }
+
+const narabikae = (self) => {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/Post/index');
+    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    const post_object = self.parentNode.parentNode;
+    console.log(post_object.dataset.updated_at);
+
+}

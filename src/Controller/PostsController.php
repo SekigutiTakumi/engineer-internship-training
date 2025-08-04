@@ -24,6 +24,7 @@ class PostsController extends AppController
         $this->assign('pageName', $pageName);
 
         $post = new Post();
+        $GETPARA = 
         $posts = $post->fetch();
         $this->assign('posts', $posts);
         var_dump($posts);
@@ -60,9 +61,9 @@ class PostsController extends AppController
         $name = $this->request->getData('name');
         $message = $this->request->getData('message');
         $id = (int)$this->request->getData('id');
-
+        $updated_at = $this->request->getData('updated_at');
         $post = new Post();
-        $post->update($id, $name, $message);
+        $post->update($id, $name, $message, $updated_at);
         echo '更新に成功しました。';
     }
 
