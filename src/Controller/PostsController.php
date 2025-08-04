@@ -20,7 +20,7 @@ class PostsController extends AppController
      */
     public function index(): void
     {
-        $pageName = 'HOME / N（ベータバージョン）';
+        $pageName = 'HOME / Nサービス';
         $this->assign('pageName', $pageName);
 
         $post = new Post();
@@ -41,7 +41,6 @@ class PostsController extends AppController
     {
         $name = $this->request->getData('name');
         $message = $this->request->getData('message');
-
         $post = new Post();
         $post->save($name, $message);
 
@@ -56,8 +55,7 @@ class PostsController extends AppController
     public function edit(): void
     {
         // TODO: 必須課題3:投稿更新機能実装時に消す
-        echo 'この機能は未完成です';
-        return;
+
 
         $name = $this->request->getData('name');
         $message = $this->request->getData('message');

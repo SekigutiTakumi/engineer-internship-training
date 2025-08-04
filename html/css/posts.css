@@ -1,12 +1,21 @@
 /* 追加するCSS */
 .header {
-    background-color: red;
+    background-color: #000000;
+    color: white;
+    size: 16px;
 }
 
+.content{
+    background-color: #a8fff1;
+    padding: 20px;
+}
 
 /* 投稿に関するCSS */
 .post {
     display: flex;
+    background-color: #fffaced2;
+    border: 5px #000000;
+    border-radius: 10px;
 }
 
 .post-icon {
@@ -25,7 +34,7 @@
     width: 100%;
 }
 
-.post-info {
+.post-info {  
     position: relative;
     width: 100%;
 }
