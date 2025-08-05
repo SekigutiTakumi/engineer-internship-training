@@ -22,12 +22,14 @@ class PostsController extends AppController
     {
         $pageName = 'HOME / Nサービス';
         $this->assign('pageName', $pageName);
-
         $post = new Post();
-        $GETPARA = 
-        $posts = $post->fetch();
+        if(empty($_GET)){
+            $GETPARA = "new";
+        }else{
+            $GETPARA = $_GET["order"];
+        };
+        $posts = $post->fetch($GETPARA);
         $this->assign('posts', $posts);
-        var_dump($posts);
         $this->show('Posts/index.php');
 
         return;

@@ -44,10 +44,12 @@
             <hr>
             <!-- 投稿一覧 -->
             <div class="posts">   
-                <select name="order"onclick="narabikae(this)">
+                <form id = "filter" method="GET" action="/Posts/index">
+                    <select id = "filterSelect" name="order" onchange= "document.getElementById('filter').submit()" >
                     <option value="new">新しい順</option>
                     <option value="old">古い順</option>
                 </select>
+                </form>
                 <?php if ($this->get('posts')) : ?>
                     <?php foreach ($this->get('posts') as $post) : ?>
                         <!-- 投稿カード -->

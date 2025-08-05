@@ -17,7 +17,7 @@ class Post
     public function save(string $name, string $message): void
     {
         $pdo = $this->dbConnect();
-        $query = "INSERT INTO posts(`name`, `message`, ) VALUE('$name', '$message',)";
+        $query = "INSERT INTO posts(`name`, `message`) VALUE('$name', '$message')";
         $pdo->query($query);
     }
 
@@ -63,7 +63,6 @@ class Post
         $sql = "SELECT `id`, `name`, `message` ,`updated_at`
             FROM posts 
             ORDER BY `updated_at` $order";
-            var_dump($sql);
         $statement = $pdo->query($sql);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
